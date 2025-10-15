@@ -1,0 +1,12 @@
+@"
+# Java
+target/
+*.iml
+/.idea
+*.class
+
+# Node
+node_modules/
+build/
+.env
+"@ | Out-File -Encoding UTF8 .gitignore
