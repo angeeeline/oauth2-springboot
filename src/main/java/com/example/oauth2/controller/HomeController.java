@@ -1,12 +1,18 @@
-﻿package com.example.oauth2.controller;
+package com.example.oauth2.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+import java.util.Map;
+
+@RestController
 public class HomeController {
     @GetMapping("/")
-    public String home() {
-        return "home"; // needs src/main/resources/templates/home.html if using Thymeleaf
+    public Map<String, Object> home() {
+        return Map.of(
+                "message", "Welcome to the OAuth2 demo API",
+                "login", "/oauth2/authorization/google",
+                "profile", "/profile"
+        );
     }
 }
